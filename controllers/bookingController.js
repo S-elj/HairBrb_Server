@@ -59,7 +59,7 @@ async function checkAvailability(propertyId, startDate, endDate) {
         ]
     });
 
-    return bookings.length === 0; // Si aucun booking ne chevauche les dates, la propriété est disponible
+    return bookings.length === 0; 
 }
 
 
@@ -134,3 +134,5 @@ async function checkAvailability(propertyId, startDate, endDate) {
 
     return bookings.length === 0; 
 }
+module.exports.checkAvailability = checkAvailability;  
+

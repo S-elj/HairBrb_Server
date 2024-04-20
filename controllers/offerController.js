@@ -1,16 +1,22 @@
 const Offer = require('../models/Offer');
 const Property = require('../models/Property');
+const { checkAvailability } = require('./bookingController');  
+
+
 
 // Fonction de recherche multicritères pour les offres
 exports.searchOffers = async (req, res) => {
     const { startDate, endDate, city, maxPrice, minBedrooms, minBeds, maxDistance } = req.query;
 
     try {
+        // Validation initiale des dates
+        if (startDate && endDate && parseInt(endDate) < parseInt(startDate)) {
+            return res.status(400).send({ message: "La date de fin doit être postérieure à la date de début." });
+        }
+
         const query = {};
         const propertyQuery = {};
 
-        if (startDate) query.startDate = { $gte: parseInt(startDate) };
-        if (endDate) query.endDate = { $lte: parseInt(endDate) };
         if (city) propertyQuery.city = city;
         if (maxPrice) propertyQuery.price = { $lte: parseInt(maxPrice) };
         if (minBedrooms) propertyQuery.bedrooms = { $gte: parseInt(minBedrooms) };
@@ -20,17 +26,22 @@ exports.searchOffers = async (req, res) => {
         // Trouver toutes les propriétés correspondantes d'abord
         const properties = await Property.find(propertyQuery);
 
-        if (properties.length > 0) {
-            // Extraire les ID des propriétés trouvées
-            const propertyIds = properties.map(prop => prop.propertyId);
+        const availableProperties = [];
+        for (const property of properties) {
+            // Vérifier la disponibilité de chaque propriété
+            const isAvailable = startDate && endDate ? await checkAvailability(property.propertyId, parseInt(startDate), parseInt(endDate)) : true;
+            if (isAvailable) {
+                availableProperties.push(property.propertyId);
+            }
+        }
 
-            // Rechercher des offres qui correspondent aux propriétés trouvées
-            query.propertyId = { $in: propertyIds };
-
+        if (availableProperties.length > 0) {
+            // Rechercher des offres qui correspondent aux propriétés disponibles
+            query.propertyId = { $in: availableProperties };
             const offers = await Offer.find(query).populate('propertyId');
             res.json(offers);
         } else {
-            // Si aucune propriété n'est trouvée, renvoyer un tableau vide
+            // Si aucune propriété disponible n'est trouvée, renvoyer un tableau vide
             res.json([]);
         }
     } catch (error) {
