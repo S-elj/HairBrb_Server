@@ -1,4 +1,6 @@
 const Booking = require('../models/Booking');
+const Offer = require('../models/Offer'); 
+
 
 // Afficher tous les bookings
 exports.findAll = async (req, res) => {
@@ -10,8 +12,6 @@ exports.findAll = async (req, res) => {
     }
 };
 
-const Booking = require('../models/Booking');
-const Offer = require('../models/Offer'); // Assurez-vous d'avoir un modèle pour les offres
 
 // Créer un nouveau booking
 exports.create = async (req, res) => {
