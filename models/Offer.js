@@ -7,4 +7,4 @@ const offerSchema = new mongoose.Schema({
     endDate: { type: Number, required: true },
 });
 
-module.exports = mongoose.model('Booking', offerSchema);
+module.exports = mongoose.model('Offer', offerSchema);
