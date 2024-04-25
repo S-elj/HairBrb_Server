@@ -1,36 +1,6 @@
 [
-    {
-      "propertyId": "prop101",
-      "ownerEmail": "laura@example.com",
-      "city": "Paris",
-      "street": "Rue de Rivoli",
-      "postalCode": "75001",
-      "beds": 2,
-      "bedrooms": 1,
-      "distance": "200m from center",
-      "price": 80
-    },
-    {
-      "propertyId": "prop202",
-      "ownerEmail": "alex@example.com",
-      "city": "Lyon",
-      "street": "Rue de la République",
-      "postalCode": "69001",
-      "beds": 4,
-      "bedrooms": 2,
-      "distance": "100m from station",
-      "price": 95
-    },
-    {
-      "propertyId": "prop303",
-      "ownerEmail": "chloe@example.com",
-      "city": "Marseille",
-      "street": "La Canebière",
-      "postalCode": "13001",
-      "beds": 3,
-      "bedrooms": 2,
-      "distance": "500m from port",
-      "price": 110
-    }
-  ]
-  
+  {"propertyId": "prop1", "ownerId": "user1@example.com", "city": "Paris", "street": "Rue de Rivoli", "postalCode": "75001", "beds": 2, "bedrooms": 1, "distance": 0.5, "price": 150, "imageUrl": "https://example.com/image1.jpg"},
+  {"propertyId": "prop2", "ownerId": "user2@example.com", "city": "Lyon", "street": "Avenue Berthelot", "postalCode": "69007", "beds": 3, "bedrooms": 2, "distance": 1.0, "price": 200, "imageUrl": "https://example.com/image2.jpg"},
+  {"propertyId": "prop3", "ownerId": "user3@example.com", "city": "Marseille", "street": "La Canebiere", "postalCode": "13001", "beds": 1, "bedrooms": 1, "distance": 1.5, "price": 100, "imageUrl": "https://example.com/image3.jpg"},
+  {"propertyId": "prop4", "ownerId": "user4@example.com", "city": "Nice", "street": "Promenade des Anglais", "postalCode": "06000", "beds": 4, "bedrooms": 3, "distance": 2.0, "price": 250, "imageUrl": "https://example.com/image4.jpg"}
+]

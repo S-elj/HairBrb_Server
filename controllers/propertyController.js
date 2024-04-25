@@ -28,7 +28,9 @@ exports.create = async (req, res) => {
         beds,
         bedrooms,
         distance,
-        price
+        price,
+        imageUrl  
+
     });
 
     try {

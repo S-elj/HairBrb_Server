@@ -1,26 +1,4 @@
 [
-  {
-    "bookingId": "book101",
-    "propertyId": "prop101",
-    "renterEmail": "alex@example.com",
-    "startDate": 20240401,
-    "endDate": 20240405,
-    "review": "Very comfortable apartment and well located."
-  },
-  {
-    "bookingId": "book202",
-    "propertyId": "prop202",
-    "renterEmail": "chloe@example.com",
-    "startDate": 20240515,
-    "endDate": 20240520,
-    "review": "Excellent stay, friendly host."
-  },
-  {
-    "bookingId": "book303",
-    "propertyId": "prop303",
-    "renterEmail": "laura@example.com",
-    "startDate": 20240610,
-    "endDate": 20240615,
-    "review": "Beautiful view, spacious apartment."
-  }
+  {"bookingId": "book1", "propertyId": "prop1", "renterId": "user5@example.com", "startDate": 1670890400, "endDate": 1670976800, "review": "Great place, enjoyed my stay!"},
+  {"bookingId": "book2", "propertyId": "prop3", "renterId": "user4@example.com", "startDate": 1671063200, "endDate": 1671149600, "review": "Comfortable and cozy, will come again."}
 ]

@@ -1,21 +1,7 @@
 [
-    {
-      "email": "laura@example.com",
-      "firstName": "Laura",
-      "lastName": "Martin",
-      "phone": "0123456789"
-    },
-    {
-      "email": "alex@example.com",
-      "firstName": "Alex",
-      "lastName": "Durand",
-      "phone": "0987654321"
-    },
-    {
-      "email": "chloe@example.com",
-      "firstName": "Chloé",
-      "lastName": "Bernard",
-      "phone": "0234567891"
-    }
-  ]
-  
+  {"email": "user1@example.com", "firstName": "John", "lastName": "Doe", "phone": "1234567890"},
+  {"email": "user2@example.com", "firstName": "Jane", "lastName": "Doe", "phone": "2345678901"},
+  {"email": "user3@example.com", "firstName": "Alice", "lastName": "Smith", "phone": "3456789012"},
+  {"email": "user4@example.com", "firstName": "Bob", "lastName": "Johnson", "phone": "4567890123"},
+  {"email": "user5@example.com", "firstName": "Charlie", "lastName": "Brown", "phone": "5678901234"}
+]

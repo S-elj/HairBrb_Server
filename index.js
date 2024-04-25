@@ -1,14 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-const User = require('./models/User'); 
-const Property = require('./models/Property'); 
-const Booking = require('./models/Booking'); 
-
-
 const usersRouter = require('./routes/users');
 const propertiesRouter = require('./routes/properties');
 const bookingsRouter = require('./routes/bookings');
+const offerRouter = require('./routes/offers');
+
 
 const mongoDB = "mongodb://localhost:27017/HAIRBRB";
 
@@ -22,6 +19,7 @@ app.use(express.json());
 app.use('/users', usersRouter);
 app.use('/properties', propertiesRouter);
 app.use('/bookings', bookingsRouter);
+app.use('/offers', offerRouter)
 
 
 // Routes de base
