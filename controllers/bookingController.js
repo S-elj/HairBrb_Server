@@ -21,9 +21,8 @@ exports.create = async (req, res) => {
         });
     }
 
-    const { bookingId, propertyId, renterEmail, startDate, endDate, review } = req.body;
+    const { propertyId, renterEmail, startDate, endDate, review } = req.body;
 
-    // Vérifier si la propriété est disponible pour les dates demandées
     const available = await checkAvailability(propertyId, startDate, endDate);
     if (!available) {
         return res.status(400).send({
@@ -32,7 +31,6 @@ exports.create = async (req, res) => {
     }
 
     const booking = new Booking({
-        bookingId,
         propertyId,
         renterEmail,
         startDate,
