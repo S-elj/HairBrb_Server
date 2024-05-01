@@ -40,7 +40,7 @@ exports.searchOffers = async (req, res) => {
             query.propertyId = { $in: availableProperties };
             const offers = await Offer.find(query).populate({
                 path: 'propertyId',
-                select: 'city street postalCode beds bedrooms distance price rating imageUrl -_id' 
+                select: 'ownerId city street postalCode beds bedrooms distance price rating imageUrl -_id' 
             });
             res.json(offers);
         } else {
