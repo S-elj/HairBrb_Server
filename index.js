@@ -1,5 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
+
 
 const usersRouter = require('./routes/users');
 const propertiesRouter = require('./routes/properties');
@@ -15,7 +17,7 @@ mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
 
 const app = express();
 app.use(express.json());
-
+app.use(cors());
 app.use('/users', usersRouter);
 app.use('/properties', propertiesRouter);
 app.use('/bookings', bookingsRouter);
