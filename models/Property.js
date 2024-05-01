@@ -13,15 +13,12 @@ const propertySchema = new mongoose.Schema({
     rating: {
         type: Number,
         required: true,
-        min: 0,   // Valeur minimale pour les étoiles
-        max: 5    // Valeur maximale pour les étoiles
+        min: 0,  
+        max: 5   
     },
     imageUrl: { type: String, required: false }
 
-}); // Empêche Mongoose de créer automatiquement un champ _id
+}); 
 
-// Assurez-vous d'enregistrer le modèle avec le bon paramètre pour _id
 mongoose.model('Property', propertySchema);
-
-
 module.exports = mongoose.model('Property', propertySchema);

@@ -1,4 +1,4 @@
 [
-  {"bookingId": "book1", "propertyId": "prop1", "renterId": "user5@example.com", "startDate": 1670890400, "endDate": 1670976800, "review": "Great place, enjoyed my stay!"},
-  {"bookingId": "book2", "propertyId": "prop3", "renterId": "user4@example.com", "startDate": 1671063200, "endDate": 1671149600, "review": "Comfortable and cozy, will come again."}
+  {"bookingId": "book1", "propertyId": "prop1", "renterEmail": "user5@example.com", "startDate": 1670890400, "endDate": 1670976800, "review": "Great place, enjoyed my stay!"},
+  {"bookingId": "book2", "propertyId": "prop3", "renterEmail": "user4@example.com", "startDate": 1671063200, "endDate": 1671149600, "review": "Comfortable and cozy, will come again."}
 ]
