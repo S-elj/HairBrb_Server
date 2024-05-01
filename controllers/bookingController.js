@@ -48,18 +48,6 @@ exports.create = async (req, res) => {
     }
 };
 
-async function checkAvailability(propertyId, startDate, endDate) {
-    // Vérifier les réservations existantes
-    const bookings = await Booking.find({
-        propertyId: propertyId,
-        $or: [
-            { startDate: { $lte: endDate }, endDate: { $gte: startDate } }
-        ]
-    });
-
-    return bookings.length === 0; 
-}
-
 
 // Trouver un booking par ID
 exports.findOne = async (req, res) => {
@@ -117,6 +105,38 @@ exports.delete = async (req, res) => {
         });
     }
 };
+
+
+exports.getAvailability = async (req, res) => {
+    const { propertyId } = req.query;
+    try {
+        const bookings = await Booking.find({
+            propertyId: propertyId,
+            startDate: { $exists: true },
+            endDate: { $exists: true }
+        }).lean();
+
+        const bookedPeriods = bookings.map(booking => {
+            const startDate = parseDate(booking.startDate);
+            const endDate = parseDate(booking.endDate);
+
+            return { startDate, endDate };
+        });
+    
+        res.status(200).json(bookedPeriods);
+    } catch (error) {
+        res.status(500).json({ message: 'Server error', error: error });
+    }
+};
+
+// Fonction pour convertir YYYYMMDD en un objet Date
+function parseDate(dateNumber) {
+    const dateString = dateNumber.toString();
+    const year = parseInt(dateString.substring(0, 4), 10);
+    const month = parseInt(dateString.substring(4, 6), 10) - 1; // Les mois en JS sont indexés à partir de 0
+    const day = parseInt(dateString.substring(6, 8), 10);
+    return new Date(year, month, day);
+}
 
 
 async function checkAvailability(propertyId, startDate, endDate) {
