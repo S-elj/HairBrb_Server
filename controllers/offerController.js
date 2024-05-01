@@ -5,7 +5,7 @@ const { checkAvailability } = require('./bookingController');
 
 // Fonction de recherche multicritères pour les offres
 exports.searchOffers = async (req, res) => {
-    const { startDate, endDate, city, maxPrice, minBedrooms, minBeds, maxDistance } = req.query;
+    const { startDate, endDate, city, maxPrice, minBedrooms, minBeds, maxDistance, minRating } = req.query;
 
     try {
         // Validation initiale des dates
@@ -21,6 +21,7 @@ exports.searchOffers = async (req, res) => {
         if (minBedrooms) propertyQuery.bedrooms = { $gte: parseInt(minBedrooms) };
         if (minBeds) propertyQuery.beds = { $gte: parseInt(minBeds) };
         if (maxDistance) propertyQuery.distance = { $lte: parseInt(maxDistance) };
+        if (minRating) propertyQuery.rating = { $gte: parseInt(minRating) };
 
         // Trouver toutes les propriétés correspondantes d'abord
         const properties = await Property.find(propertyQuery);
@@ -30,7 +31,7 @@ exports.searchOffers = async (req, res) => {
             // Vérifier la disponibilité de chaque propriété
             const isAvailable = startDate && endDate ? await checkAvailability(property._id, parseInt(startDate), parseInt(endDate)) : true;
             if (isAvailable) {
-                availableProperties.push(property._id);  // Assurez-vous que ceci utilise _id si c'est ce que vous utilisez pour les références
+                availableProperties.push(property._id); 
             }
         }
 
@@ -39,7 +40,7 @@ exports.searchOffers = async (req, res) => {
             query.propertyId = { $in: availableProperties };
             const offers = await Offer.find(query).populate({
                 path: 'propertyId',
-                select: 'city street postalCode beds bedrooms distance price imageUrl -_id' 
+                select: 'city street postalCode beds bedrooms distance price rating imageUrl -_id' 
             });
             res.json(offers);
         } else {

@@ -10,7 +10,14 @@ const propertySchema = new mongoose.Schema({
     bedrooms: { type: Number, required: true },
     distance: { type: Number, required: true },
     price: { type: Number, required: true },
+    rating: {
+        type: Number,
+        required: true,
+        min: 0,   // Valeur minimale pour les étoiles
+        max: 5    // Valeur maximale pour les étoiles
+    },
     imageUrl: { type: String, required: false }
+
 }); // Empêche Mongoose de créer automatiquement un champ _id
 
 // Assurez-vous d'enregistrer le modèle avec le bon paramètre pour _id

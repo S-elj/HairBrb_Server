@@ -20,6 +20,7 @@ app.use('/users', usersRouter);
 app.use('/properties', propertiesRouter);
 app.use('/bookings', bookingsRouter);
 app.use('/offers', offerRouter)
+app.use('/images', express.static('uploads/img'));
 
 
 // Routes de base

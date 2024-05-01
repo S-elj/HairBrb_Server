@@ -1,6 +1,67 @@
 [
-  {"_id": "prop1", "ownerId": "user1@example.com", "city": "Paris", "street": "Rue de Rivoli", "postalCode": "75001", "beds": 2, "bedrooms": 1, "distance": 0.5, "price": 150, "imageUrl": "https://example.com/image1.jpg"},
-  {"_id": "prop2", "ownerId": "user2@example.com", "city": "Lyon", "street": "Avenue Berthelot", "postalCode": "69007", "beds": 3, "bedrooms": 2, "distance": 1.0, "price": 200, "imageUrl": "https://example.com/image2.jpg"},
-  {"_id": "prop3", "ownerId": "user3@example.com", "city": "Marseille", "street": "La Canebiere", "postalCode": "13001", "beds": 1, "bedrooms": 1, "distance": 1.5, "price": 100, "imageUrl": "https://example.com/image3.jpg"},
-  {"_id": "prop4", "ownerId": "user4@example.com", "city": "Nice", "street": "Promenade des Anglais", "postalCode": "06000", "beds": 4, "bedrooms": 3, "distance": 2.0, "price": 250, "imageUrl": "https://example.com/image4.jpg"}
+  {
+    "_id": "prop1",
+    "ownerId": "user1@example.com",
+    "city": "Paris",
+    "street": "Rue de Rivoli",
+    "postalCode": "75001",
+    "beds": 2,
+    "bedrooms": 1,
+    "distance": 0.5,
+    "price": 150,
+    "rating": 0,
+    "imageUrl": "http://localhost:3000/images/chambre1.jpg"
+  },
+  {
+    "_id": "prop2",
+    "ownerId": "user2@example.com",
+    "city": "Lyon",
+    "street": "Avenue Berthelot",
+    "postalCode": "69007",
+    "beds": 3,
+    "bedrooms": 2,
+    "distance": 1.0,
+    "price": 200,
+    "rating": 4,
+    "imageUrl": "http://localhost:3000/images/chambre2.jpg"
+  },
+  {
+    "_id": "prop3",
+    "ownerId": "user3@example.com",
+    "city": "Marseille",
+    "street": "La Canebiere",
+    "postalCode": "13001",
+    "beds": 1,
+    "bedrooms": 1,
+    "distance": 1.5,
+    "price": 100,
+    "rating": 2,
+    "imageUrl": "http://localhost:3000/images/chambre3.jpg"
+  },
+  {
+    "_id": "prop4",
+    "ownerId": "user4@example.com",
+    "city": "Nice",
+    "street": "Promenade des Anglais",
+    "postalCode": "06000",
+    "beds": 4,
+    "bedrooms": 3,
+    "distance": 2.0,
+    "price": 250,
+    "rating": 1,
+    "imageUrl": "http://localhost:3000/images/chambre4.jpg"
+  },
+  {
+    "_id": "prop5",
+    "ownerId": "user5@example.com",
+    "city": "Toulouse",
+    "street": "Allée Jean Jaurès",
+    "postalCode": "31000",
+    "beds": 3,
+    "bedrooms": 2,
+    "distance": 0.3,
+    "price": 180,
+    "rating": 3,
+    "imageUrl": "http://localhost:3000/images/chambre5.jpg"
+  }
 ]
