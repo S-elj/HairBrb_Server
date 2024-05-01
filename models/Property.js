@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const propertySchema = new mongoose.Schema({
-    propertyId: { type: String, required: true, unique: true },
+    _id: { type: String, required: true, unique: true }, // Définir _id explicitement comme String
     ownerId: { type: String, required: true },
     city: { type: String, required: true },
     street: { type: String, required: true },
@@ -10,8 +10,11 @@ const propertySchema = new mongoose.Schema({
     bedrooms: { type: Number, required: true },
     distance: { type: Number, required: true },
     price: { type: Number, required: true },
-    imageUrl: { type: String, require: false } 
+    imageUrl: { type: String, required: false }
+}); // Empêche Mongoose de créer automatiquement un champ _id
 
-});
+// Assurez-vous d'enregistrer le modèle avec le bon paramètre pour _id
+mongoose.model('Property', propertySchema);
+
 
 module.exports = mongoose.model('Property', propertySchema);

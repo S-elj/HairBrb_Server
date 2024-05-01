@@ -3,7 +3,6 @@ const Property = require('../models/Property');
 const { checkAvailability } = require('./bookingController');  
 
 
-
 // Fonction de recherche multicritères pour les offres
 exports.searchOffers = async (req, res) => {
     const { startDate, endDate, city, maxPrice, minBedrooms, minBeds, maxDistance } = req.query;
@@ -29,16 +28,19 @@ exports.searchOffers = async (req, res) => {
         const availableProperties = [];
         for (const property of properties) {
             // Vérifier la disponibilité de chaque propriété
-            const isAvailable = startDate && endDate ? await checkAvailability(property.propertyId, parseInt(startDate), parseInt(endDate)) : true;
+            const isAvailable = startDate && endDate ? await checkAvailability(property._id, parseInt(startDate), parseInt(endDate)) : true;
             if (isAvailable) {
-                availableProperties.push(property.propertyId);
+                availableProperties.push(property._id);  // Assurez-vous que ceci utilise _id si c'est ce que vous utilisez pour les références
             }
         }
 
         if (availableProperties.length > 0) {
             // Rechercher des offres qui correspondent aux propriétés disponibles
             query.propertyId = { $in: availableProperties };
-            const offers = await Offer.find(query).populate('propertyId');
+            const offers = await Offer.find(query).populate({
+                path: 'propertyId',
+                select: 'city street postalCode beds bedrooms distance price imageUrl -_id' 
+            });
             res.json(offers);
         } else {
             // Si aucune propriété disponible n'est trouvée, renvoyer un tableau vide
@@ -48,7 +50,6 @@ exports.searchOffers = async (req, res) => {
         res.status(500).send({ message: error.message || "An error occurred while searching for offers." });
     }
 };
-
 
 // Afficher tous les Offer
 exports.findAll = async (req, res) => {
