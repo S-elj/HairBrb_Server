@@ -8,7 +8,6 @@ exports.searchOffers = async (req, res) => {
     const { startDate, endDate, city, maxPrice, minBedrooms, minBeds, maxDistance, minRating } = req.query;
 
     try {
-        // Validation initiale des dates
         if (startDate && endDate && parseInt(endDate) < parseInt(startDate)) {
             return res.status(400).send({ message: "La date de fin doit être postérieure à la date de début." });
         }

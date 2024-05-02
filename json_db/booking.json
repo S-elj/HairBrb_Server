@@ -1,23 +1,2 @@
-[
-  {
-    "propertyId": "prop1",
-    "renterEmail": "user5@example.com",
-    "startDate": 20240501,
-    "endDate": 20240503,
-    "review": "Great place, enjoyed my stay!"
-  },
-  {
-    "propertyId": "prop1",
-    "renterEmail": "user5@example.com",
-    "startDate": 20240508,
-    "endDate": 20240512,
-    "review": "Loved the views and the local food!"
-  },
-  {
-    "propertyId": "prop1",
-    "renterEmail": "user5@example.com",
-    "startDate": 20240515,
-    "endDate": 20240521,
-    "review": "Very comfortable and well located!"
-  }
-]
+
+[]

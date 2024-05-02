@@ -1,7 +1,13 @@
 [
-    {"offerId": "offer1", "propertyId": "prop1", "startDate": 1670006400, "endDate": 1670092800},
-    {"offerId": "offer2", "propertyId": "prop2", "startDate": 1670189200, "endDate": 1670275600},
-    {"offerId": "offer3", "propertyId": "prop3", "startDate": 1670362000, "endDate": 1670448400},
-    {"offerId": "offer4", "propertyId": "prop4", "startDate": 1670534800, "endDate": 1670621200},
-    {"offerId": "offer5", "propertyId": "prop1", "startDate": 1670717600, "endDate": 1670804000}
-]
+    {"offerId": "offer1", "propertyId": "prop1", "startDate": "20220101", "endDate": "20260228"},
+    {"offerId": "offer2", "propertyId": "prop2", "startDate": "20220101", "endDate": "20260228"},
+    {"offerId": "offer3", "propertyId": "prop3", "startDate": "20220101", "endDate": "20260228"},
+    {"offerId": "offer4", "propertyId": "prop4", "startDate": "20220101", "endDate": "20260228"},
+    {"offerId": "offer5", "propertyId": "prop5", "startDate": "20220101", "endDate": "20260228"},
+    {"offerId": "offer6", "propertyId": "prop6", "startDate": "20220101", "endDate": "20260228"},
+    {"offerId": "offer7", "propertyId": "prop7", "startDate": "20220101", "endDate": "20260228"},
+    {"offerId": "offer8", "propertyId": "prop8", "startDate": "20220101", "endDate": "20260228"},
+    {"offerId": "offer9", "propertyId": "prop9", "startDate": "20220101", "endDate": "20260228"},
+    {"offerId": "offer10", "propertyId": "prop10", "startDate": "20220101", "endDate": "20260228"}
+  ]
+  

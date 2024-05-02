@@ -7,7 +7,7 @@
     "postalCode": "75001",
     "beds": 2,
     "bedrooms": 1,
-    "distance": 0.5,
+    "distance": 500,
     "price": 150,
     "rating": 0,
     "imageUrl": "http://localhost:3000/images/chambre1.jpg"
@@ -20,7 +20,7 @@
     "postalCode": "69007",
     "beds": 3,
     "bedrooms": 2,
-    "distance": 1.0,
+    "distance": 1000,
     "price": 200,
     "rating": 4,
     "imageUrl": "http://localhost:3000/images/chambre2.jpg"
@@ -33,7 +33,7 @@
     "postalCode": "13001",
     "beds": 1,
     "bedrooms": 1,
-    "distance": 1.5,
+    "distance": 1500,
     "price": 100,
     "rating": 2,
     "imageUrl": "http://localhost:3000/images/chambre3.jpg"
@@ -46,7 +46,7 @@
     "postalCode": "06000",
     "beds": 4,
     "bedrooms": 3,
-    "distance": 2.0,
+    "distance": 2000,
     "price": 250,
     "rating": 1,
     "imageUrl": "http://localhost:3000/images/chambre4.jpg"
@@ -59,9 +59,74 @@
     "postalCode": "31000",
     "beds": 3,
     "bedrooms": 2,
-    "distance": 0.3,
+    "distance": 300,
     "price": 180,
     "rating": 3,
     "imageUrl": "http://localhost:3000/images/chambre5.jpg"
+  },
+  {
+    "_id": "prop6",
+    "ownerId": "user6@example.com",
+    "city": "Bordeaux",
+    "street": "Cours de l'Intendance",
+    "postalCode": "33000",
+    "beds": 2,
+    "bedrooms": 1,
+    "distance": 800,
+    "price": 170,
+    "rating": 5,
+    "imageUrl": "http://localhost:3000/images/chambre6.jpg"
+  },
+  {
+    "_id": "prop7",
+    "ownerId": "user7@example.com",
+    "city": "Strasbourg",
+    "street": "Avenue de la Paix",
+    "postalCode": "67000",
+    "beds": 3,
+    "bedrooms": 2,
+    "distance": 1200,
+    "price": 210,
+    "rating": 3,
+    "imageUrl": "http://localhost:3000/images/chambre7.jpg"
+  },
+  {
+    "_id": "prop8",
+    "ownerId": "user8@example.com",
+    "city": "Lille",
+    "street": "Rue Solférino",
+    "postalCode": "59000",
+    "beds": 1,
+    "bedrooms": 1,
+    "distance": 400,
+    "price": 120,
+    "rating": 4,
+    "imageUrl": "http://localhost:3000/images/chambre8.jpg"
+  },
+  {
+    "_id": "prop9",
+    "ownerId": "user9@example.com",
+    "city": "Nantes",
+    "street": "Rue du Calvaire",
+    "postalCode": "44000",
+    "beds": 4,
+    "bedrooms": 3,
+    "distance": 500,
+    "price": 220,
+    "rating": 5,
+    "imageUrl": "http://localhost:3000/images/chambre9.jpg"
+  },
+  {
+    "_id": "prop10",
+    "ownerId": "user10@example.com",
+    "city": "Montpellier",
+    "street": "Place de la Comédie",
+    "postalCode": "34000",
+    "beds": 3,
+    "bedrooms": 2,
+    "distance": 600,
+    "price": 190,
+    "rating": 2,
+    "imageUrl": "http://localhost:3000/images/chambre10.jpg"
   }
 ]

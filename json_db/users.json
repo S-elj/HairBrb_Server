@@ -3,5 +3,10 @@
   {"email": "user2@example.com", "firstName": "Jane", "lastName": "Doe", "phone": "2345678901"},
   {"email": "user3@example.com", "firstName": "Alice", "lastName": "Smith", "phone": "3456789012"},
   {"email": "user4@example.com", "firstName": "Bob", "lastName": "Johnson", "phone": "4567890123"},
-  {"email": "user5@example.com", "firstName": "Charlie", "lastName": "Brown", "phone": "5678901234"}
+  {"email": "user5@example.com", "firstName": "Charlie", "lastName": "Brown", "phone": "5678901234"},
+  {"email": "user6@example.com", "firstName": "David", "lastName": "Wilson", "phone": "6789012345"},
+  {"email": "user7@example.com", "firstName": "Eva", "lastName": "Moore", "phone": "7890123456"},
+  {"email": "user8@example.com", "firstName": "Frank", "lastName": "Taylor", "phone": "8901234567"},
+  {"email": "user9@example.com", "firstName": "Grace", "lastName": "Anderson", "phone": "9012345678"},
+  {"email": "user10@example.com", "firstName": "Henry", "lastName": "Thomas", "phone": "0123456789"}
 ]
