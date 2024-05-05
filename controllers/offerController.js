@@ -22,12 +22,10 @@ exports.searchOffers = async (req, res) => {
         if (maxDistance) propertyQuery.distance = { $lte: parseInt(maxDistance) };
         if (minRating) propertyQuery.rating = { $gte: parseInt(minRating) };
 
-        // Trouver toutes les propriétés correspondantes d'abord
         const properties = await Property.find(propertyQuery);
 
         const availableProperties = [];
         for (const property of properties) {
-            // Vérifier la disponibilité de chaque propriété
             const isAvailable = startDate && endDate ? await checkAvailability(property._id, parseInt(startDate), parseInt(endDate)) : true;
             if (isAvailable) {
                 availableProperties.push(property._id); 
@@ -35,7 +33,6 @@ exports.searchOffers = async (req, res) => {
         }
 
         if (availableProperties.length > 0) {
-            // Rechercher des offres qui correspondent aux propriétés disponibles
             query.propertyId = { $in: availableProperties };
             const offers = await Offer.find(query).populate({
                 path: 'propertyId',
@@ -43,7 +40,6 @@ exports.searchOffers = async (req, res) => {
             });
             res.json(offers);
         } else {
-            // Si aucune propriété disponible n'est trouvée, renvoyer un tableau vide
             res.json([]);
         }
     } catch (error) {
@@ -51,7 +47,6 @@ exports.searchOffers = async (req, res) => {
     }
 };
 
-// Afficher tous les Offer
 exports.findAll = async (req, res) => {
     try {
         const offers = await Offer.find();
@@ -61,7 +56,6 @@ exports.findAll = async (req, res) => {
     }
 };
 
-// Créer un nouveau Offer
 exports.create = async (req, res) => {
     if (!req.body) {
         return res.status(400).send({
@@ -87,7 +81,6 @@ exports.create = async (req, res) => {
     }
 };
 
-// Trouver un Offer par ID
 exports.findOne = async (req, res) => {
     try {
         const offer = await Offer.findById(req.params.id);
@@ -104,7 +97,6 @@ exports.findOne = async (req, res) => {
     }
 };
 
-// Mettre à jour un Offer par ID
 exports.update = async (req, res) => {
     if (!req.body) {
         return res.status(400).send({

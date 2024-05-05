@@ -25,13 +25,11 @@ app.use('/offers', offerRouter)
 app.use('/images', express.static('uploads/img'));
 
 
-// Routes de base
 app.get('/', (req, res) => {
     res.send('Bienvenue sur notre application de location de logements!');
 });
 
 
-// Définition du port et mise en marche du serveur
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Serveur en écoute sur le port ${port}...`);
